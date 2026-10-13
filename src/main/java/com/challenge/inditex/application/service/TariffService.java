@@ -1,6 +1,7 @@
 package com.challenge.inditex.application.service;
 
 import com.challenge.inditex.domain.Tariff;
+import com.challenge.inditex.domain.TariffResponseDTO;
 import com.challenge.inditex.domain.TariffSearchDTO;
 import com.challenge.inditex.infrastructure.outbound.persistence.TariffRepository;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,8 @@ public class TariffService {
         this.repository = repository;
     }
 
-    public Optional<Tariff> search(TariffSearchDTO tariffSearchDTO) {
-        return repository.search(tariffSearchDTO);
+    public Optional<TariffResponseDTO> search(TariffSearchDTO tariffSearchDTO) {
+        return repository.search(tariffSearchDTO)
+                .map(TariffResponseDTO::fromDomain);
     }
 }

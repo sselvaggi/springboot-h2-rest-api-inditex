@@ -24,6 +24,8 @@ public class TariffControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"brandId\":1, \"productId\": 35455, \"datetime\": \"2020-06-14-10.00.00\"}")
                 ).andExpect(status().isOk())
+                .andExpect(jsonPath("brandId").value(1))
+                .andExpect(jsonPath("brandName").value("ZARA"))
                 .andExpect(jsonPath("price").value(35.50))
                 .andExpect(jsonPath("priceList").value(1));
     }
@@ -34,6 +36,8 @@ public class TariffControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"brandId\":1, \"productId\": 35455, \"datetime\": \"2020-06-14-16.00.00\"}")
                 ).andExpect(status().isOk())
+                .andExpect(jsonPath("brandId").value(1))
+                .andExpect(jsonPath("brandName").value("ZARA"))
                 .andExpect(jsonPath("price").value(25.45))
                 .andExpect(jsonPath("priceList").value(2));
     }
@@ -44,6 +48,8 @@ public class TariffControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"brandId\":1, \"productId\": 35455, \"datetime\": \"2020-06-14-21.00.00\"}")
                 ).andExpect(status().isOk())
+                .andExpect(jsonPath("brandId").value(1))
+                .andExpect(jsonPath("brandName").value("ZARA"))
                 .andExpect(jsonPath("price").value(35.50))
                 .andExpect(jsonPath("priceList").value(1));
     }
@@ -54,6 +60,8 @@ public class TariffControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"brandId\":1, \"productId\": 35455, \"datetime\": \"2020-06-15-10.00.00\"}")
                 ).andExpect(status().isOk())
+                .andExpect(jsonPath("brandId").value(1))
+                .andExpect(jsonPath("brandName").value("ZARA"))
                 .andExpect(jsonPath("price").value(30.50))
                 .andExpect(jsonPath("priceList").value(3));
     }
@@ -64,6 +72,8 @@ public class TariffControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"brandId\":1, \"productId\": 35455, \"datetime\": \"2020-06-16-21.00.00\"}")
                 ).andExpect(status().isOk())
+                .andExpect(jsonPath("brandId").value(1))
+                .andExpect(jsonPath("brandName").value("ZARA"))
                 .andExpect(jsonPath("price").value(38.95))
                 .andExpect(jsonPath("priceList").value(4));
     }

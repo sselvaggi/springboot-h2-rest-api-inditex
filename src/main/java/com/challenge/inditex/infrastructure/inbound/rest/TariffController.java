@@ -3,6 +3,7 @@ package com.challenge.inditex.infrastructure.inbound.rest;
 import com.challenge.inditex.domain.Tariff;
 
 import com.challenge.inditex.application.service.TariffService;
+import com.challenge.inditex.domain.TariffResponseDTO;
 import com.challenge.inditex.domain.TariffSearchDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +21,8 @@ public class TariffController {
     }
 
     @PostMapping(value = "/api/tariff/search", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Tariff> searchTariff(@RequestBody @Valid TariffSearchDTO tariffSearchDTO) {
-        Optional<Tariff> result = tariffService.search(tariffSearchDTO);
+    public ResponseEntity<TariffResponseDTO> searchTariff(@RequestBody @Valid TariffSearchDTO tariffSearchDTO) {
+        Optional<TariffResponseDTO> result = tariffService.search(tariffSearchDTO);
         return ResponseEntity.of(result);
     }
 }

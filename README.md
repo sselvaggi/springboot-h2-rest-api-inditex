@@ -68,14 +68,14 @@ curl --url 'http://localhost:8080/api/tariff/search' \
 
 ```json
 {
+  "productId": 35455,
   "brandId": 1,
+  "brandName": "ZARA",
+  "priceList": 1,
   "startDate": "2020-06-14T00:00:00",
   "endDate": "2020-12-31T23:59:59",
-  "priceList": 1,
-  "productId": 35455,
-  "priority": 0,
   "price": 35.50,
-  "currency": "EUR"
+  "curr": "EUR"
 }
 ```
 
